@@ -1,13 +1,46 @@
 ![](banner.png?raw=true)
 
-The official template for Medical AI Datasheets.
+# Medical AI Datasheet (MAIDS) — cBioPortal `ccrcc_irc_2014`
 
-*v0.2-alpha*
+This repository is based on the official MAIDS template from **[PERSIMUNE/MAIDS-Template](https://github.com/PERSIMUNE/MAIDS-Template)** (*v0.2-alpha*) and documents the public cBioPortal study:
 
-MAIDS is currently being prototyped for the [Copenhagen Ultrathon on Precision Medicine](https://ultrathon.online) where you will find several examples.
+**[Kidney Renal Clear Cell Carcinoma (IRC, Nat Genet 2014)](https://www.cbioportal.org/study/summary?id=ccrcc_irc_2014)** (`ccrcc_irc_2014`)
 
-This repository is intended to maintain the code and protocols for authoring new MAIDS documents based on the MAIDS specification ([maintained separately](https://github.com/PERSIMUNE-Health-Informatics/MAIDS-Specification)). The specification is included as a submodule ensuring proper tracking of provenance when forking this repo to create new MAIDS documents.
+Upstream publication: Gerlinger et al., *Nature Genetics* 2014, PMID [24487277](https://pubmed.ncbi.nlm.nih.gov/24487277/).
 
-You can make use of this template either through the Github templating button at the top of this page or by cloning and changing the remote to your organisation or own account. Templating makes it quick and easy to get started but you will not be able to merge any updates using git. Cloning, on the other hand, will allow you to use git to update provided you know how. We plan to make updating easier in the future, but for now these are your only options. Please do not fork this repository unless you would actually like to contribute directly to this project.
+## Contents
 
-Please watch/star if you'd like to be notified of new developments.
+| Path | Purpose |
+|------|---------|
+| `xml/target/` | Filled MAIDS XML (questionnaire, about, features, keywords, provenance) for this study |
+| `docs/index.html` | Generated single-page MAIDS site (run build below) |
+| `code/fill_ccrcc_questionnaire.py` | Helper used to populate questionnaire answers (optional for updates) |
+
+## Build the HTML site
+
+From the repository root (Python 3 + `beautifulsoup4`):
+
+```bash
+pip install beautifulsoup4
+python3 code/build_site/xml2html.py -u target
+```
+
+Optional: copy `docs/images/figures/thematic.png` to `supplementary/figures/thematic.png` to silence missing-figure warnings during build.
+
+## Git remote (Loopora SSH alias)
+
+Clone with your GitHub SSH host alias:
+
+```bash
+git clone git@looporadata.ai:LooporaData/maids-ccrcc-irc-2014.git
+```
+
+Web: `https://github.com/LooporaData/maids-ccrcc-irc-2014`
+
+## Specification submodule
+
+The `specification/` directory tracks **[MAIDS-Specification](https://github.com/PERSIMUNE-Health-Informatics/MAIDS-Specification)** as a git submodule (see `.gitmodules`).
+
+---
+
+*Original template README text:* MAIDS is being prototyped in the context of the [Copenhagen Ultrathon on Precision Medicine](https://ultrathon.online). Please watch/star **[PERSIMUNE/MAIDS-Template](https://github.com/PERSIMUNE/MAIDS-Template)** for upstream updates.
