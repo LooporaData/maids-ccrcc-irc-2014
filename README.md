@@ -27,6 +27,14 @@ python3 code/build_site/xml2html.py -u target
 
 Optional: copy `docs/images/figures/thematic.png` to `supplementary/figures/thematic.png` to silence missing-figure warnings during build.
 
+## GitHub Pages
+
+The MAIDS build outputs a static site under **`docs/`** (`index.html`, `css/`, `js/`, `images/`). This repo includes **`docs/.nojekyll`** so GitHub does not run Jekyll on that folder.
+
+If Pages is not enabled yet: **Settings → Pages → Deploy from a branch → `main` → `/docs`**.
+
+Live site: **https://looporadata.github.io/maids-ccrcc-irc-2014/** — rebuild and push `docs/` after any `xml/target/` change.
+
 ## Git remote (Loopora SSH alias)
 
 Clone with your GitHub SSH host alias:
@@ -43,4 +51,4 @@ The `specification/` directory tracks **[MAIDS-Specification](https://github.com
 
 ---
 
-*Original template README text:* MAIDS is being prototyped in the context of the [Copenhagen Ultrathon on Precision Medicine](https://ultrathon.online). Please watch/star **[PERSIMUNE/MAIDS-Template](https://github.com/PERSIMUNE/MAIDS-Template)** for upstream updates.
+Please watch/star **[PERSIMUNE/MAIDS-Template](https://github.com/PERSIMUNE/MAIDS-Template)** for upstream template updates. MAIDS is also discussed in the context of the [Copenhagen Ultrathon on Precision Medicine](https://ultrathon.online).
