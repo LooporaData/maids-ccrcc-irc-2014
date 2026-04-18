@@ -1,0 +1,19 @@
+<root name="PROVENANCE">
+    <version>
+        <scores>1</scores>
+        <description>1</description>
+        <questionnaire>1</questionnaire>
+        <subsets>1</subsets>
+        <synthetic>1</synthetic>
+    </version>
+    <provenance>
+        <template>
+            <commit>63d8612</commit>
+            <tag>v0.2-alpha</tag>
+        </template>
+        <specification>
+            <commit>7581946</commit>
+            <tag>v0.1-alpha</tag>
+        </specification>
+    </provenance>
+</root>

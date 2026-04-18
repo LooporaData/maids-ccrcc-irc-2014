@@ -1,0 +1,202 @@
+<!-- Medical AI Datasheet (MAIDS) — cBioPortal study ccrcc_irc_2014 -->
+<!-- https://www.cbioportal.org/study/summary?id=ccrcc_irc_2014 -->
+<root name="ABOUT">
+    <title>
+        <question>What is the title of your dataset?</question>
+        <answer>Kidney Renal Clear Cell Carcinoma (IRC, Nat Genet 2014) — cBioPortal study ccrcc_irc_2014</answer>
+    </title>
+    <repository>
+        <question>What is the URL of the repository for this MAIDS description on Github?</question>
+        <answer>https://github.com/LooporaData/maids-ccrcc-irc-2014</answer>
+    </repository>
+    <authors>
+        <question>Who are the dataset's authors?</question>
+        <answer>
+            <author_1>
+                <firstnames>Loopora Data</firstnames>
+                <lastname>(MAIDS maintainer)</lastname>
+                <email>opensource@looporadata.ai</email>
+            </author_1>
+            <author_2>
+                <firstnames>Original study</firstnames>
+                <lastname>Gerlinger et al. (2014)</lastname>
+                <email></email>
+            </author_2>
+        </answer>
+    </authors>
+    <scores>
+        <document>
+            <score>
+                <question>What is the document score, as defined by MAIDS?</question>
+                <answer>2</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>Structured MAIDS questionnaire, feature/subset description, and keywords are completed for the public cBioPortal study. Statistical summaries in MAIDS are high-level (counts from cBioPortal API) rather than recomputed from raw mutation matrices in this repository.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer>person</answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer>Loopora Data</answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer>Loopora Data</answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer>opensource@looporadata.ai</answer>
+                </contactEmail>
+            </evaluator>
+        </document>
+        <fairness>
+            <score>
+                <question>What is the fairness score given, as defined by MAIDS?</question>
+                <answer>?</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>No formal fairness audit was performed for this MAIDS document. Consumers must assess representativeness (single-institution research cohort; small number of tumors with multi-region sampling) for their use case.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer></answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer></answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer></answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer></answer>
+                </contactEmail>
+            </evaluator>
+        </fairness>
+        <magnitude>
+            <score>
+                <question>What is the magnitude score given, as defined by MAIDS?</question>
+                <answer>1</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>Public study lists 78 sequenced samples and describes multi-region exome sequencing of 10 clear cell RCCs (Gerlinger et al., Nat Genet 2014). Magnitude is modest relative to population-scale biobanks.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer>person</answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer>Loopora Data</answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer>Loopora Data</answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer>opensource@looporadata.ai</answer>
+                </contactEmail>
+            </evaluator>
+        </magnitude>
+        <synthetic>
+            <score>
+                <question>What is the synthetic score given, as defined by MAIDS?</question>
+                <answer>E</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>This repository documents a real public dataset; it does not ship synthetic data or generators.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer>person</answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer>Loopora Data</answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer>Loopora Data</answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer>opensource@looporadata.ai</answer>
+                </contactEmail>
+            </evaluator>
+        </synthetic>
+    </scores>
+    <thematic>
+        <filename>thematic.png</filename>
+    </thematic>
+    <abstract>
+        <question>Please provide a brief abstract describing this dataset.</question>
+        <answer>Public oncology cohort in cBioPortal (studyId ccrcc_irc_2014): multi-region exome sequencing of ten clear cell renal cell carcinomas (ccRCC) to study intratumor heterogeneity (Gerlinger et al., Nature Genetics 2014, PMID 24487277). The study is indexed on cBioPortal with clinical and genomic views; this MAIDS record summarizes motivation, composition, and distribution for secondary use and ML transparency.</answer>
+    </abstract>
+    <usecases>
+        <question>Please provide one or more short use cases to highlight what this dataset might be used for. These should summarise the main and secondary research questions into single sentence objectives. You may also use this section to expand on possible uses not discussed in the research questions.</question>
+        <answer>
+            <usecase_1>Explore spatial and temporal intratumor genetic heterogeneity patterns in ccRCC using multi-region sampling.</usecase_1>
+            <usecase_2>Benchmark variant calling, subclonal reconstruction, or phylogeny methods on a small multi-region exome cohort.</usecase_2>
+            <usecase_3>Teach or demo cBioPortal data access and MAIDS-style dataset documentation for precision oncology education.</usecase_3>
+        </answer>
+    </usecases>
+    <research>
+        <main>
+            <question>Please state, in detail, the main hypothesis for which this dataset was created.</question>
+            <answer>The original study addressed intratumor heterogeneity and branched evolution in clear cell renal cell carcinoma using multi-region exome sequencing, reporting diverse genotypes across regions of individual tumors (Gerlinger et al., Nat Genet 2014).</answer>
+        </main>
+        <secondary>
+            <question>Please state, in detail, any other hypotheses which this dataset would be able to address.</question>
+            <answer>Secondary analyses may include correlating clinical metadata with mutation profiles, comparing cohort-level mutation frequencies to other ccRCC studies, and developing or validating computational pathology or genomics ML models—subject to cBioPortal and publication terms.</answer>
+        </secondary>
+    </research>
+    <figures>
+        <question>Please entitle and provide a legend for each figure found in "./images/figures/".</question>
+        <answer>
+            <figure_1>
+                <filename></filename>
+                <title></title>
+                <legend></legend>
+            </figure_1>
+        </answer>
+    </figures>
+    <subsetAssociations>
+        <filename></filename>
+        <legend>
+            <question>What is the legend for the figure describing how subsets are associated to one another?</question>
+            <answer></answer>
+        </legend>
+    </subsetAssociations>
+    <populationSelection>
+        <rootNode>
+            <nodeid>0</nodeid>
+            <name>ccrcc_irc_2014 public study cohort</name>
+            <description>Patients and samples as distributed via cBioPortal for study ccrcc_irc_2014 (Kidney Renal Clear Cell Carcinoma, IRC 2014).</description>
+            <sources>
+                <source>
+                    <entityName>cBioPortal for Cancer Genomics</entityName>
+                    <entityAddress>https://www.cbioportal.org/study/summary?id=ccrcc_irc_2014</entityAddress>
+                    <contactPerson></contactPerson>
+                    <contactEmail></contactEmail>
+                    <dataDescription>Clinical and genomic data tables per cBioPortal study export and on-portal visualization.</dataDescription>
+                    <instancesContributed>See cBioPortal study page for current sample and patient counts.</instancesContributed>
+                    <beginDateCollection></beginDateCollection>
+                    <endDateCollection></endDateCollection>
+                </source>
+            </sources>
+        </rootNode>
+    </populationSelection>
+</root>

@@ -1,0 +1,148 @@
+<root name="FEATURE">
+    <Subset_Questions>
+        <ID>What is the ID of the Subset?</ID>
+        <Name>What is the name of the subset?</Name>
+        <LastUpdate>When was the subset last updated?</LastUpdate>
+        <Modality>What is the modality of the subset? (The type of data)</Modality>
+        <Format>What is the format or the schema of the subset?</Format>
+        <Size>What is the size of the subset? (Number of rows if it's a table or files if it's a directory)</Size>
+        <Parent>What is the ID of the parent of the subset? (Use 0 if none)</Parent>
+        <Purpose>What is the purpose of the subset?</Purpose>
+        <Link>What is the link (URL) to further description of the subset?</Link>
+        <Covmat>Have you calculated a covariance matrix (or similar) and made it available in this dataset? Where?</Covmat>
+        <Modsys>Have you modeled all (or a few) features and made the models accessible in this dataset? Where?</Modsys>
+    </Subset_Questions>
+    <Feature_Questions>
+        <ID>What is the ID of the feature?</ID>
+        <Subset>What is the ID of the reference subset of the feature?</Subset>
+        <Introduction>What is the introduction date of the feature?</Introduction>
+        <Name>What is the name of the feature?</Name>
+        <Values>What are the values that the feature might take?</Values>
+        <Meaning_NA_NULL_NONE_OTHER>What special meaning does NA, NULL, NONE, or any other placeholder have with respect to this feature?</Meaning_NA_NULL_NONE_OTHER>
+        <Meaning_Zero>What is the meaning of the feature if it is zero?</Meaning_Zero>
+        <Meaning_BlankVoid>What does it mean if no value is to be found?</Meaning_BlankVoid>
+        <Sparsity>What level of non-zero sparsity is there?</Sparsity>
+        <Mean>What is the mean if the feature is nummeric?</Mean>
+        <Std>What is the standard deviation if the feature is numeric?</Std>
+        <Modality>How many modes does the feature have?</Modality>
+        <Median>What is the median value?</Median>
+        <IQR>What is the inter quartile range?</IQR>
+        <ParentIDs>What is the ID of the parent feature (If derived from other features)</ParentIDs>
+        <Unit>What unit is this feature in? </Unit>
+        <Definition>Define the feature.</Definition>
+        <Purpose>Why does the feature exist or is it superfluous?</Purpose>
+        <Encoding>State whether the feature is encoded and what the mapping is.</Encoding>
+    </Feature_Questions>
+    <Subset_Feature_Dataset>
+        <Subset_1>
+            <ID>1</ID>
+            <Name>cBioPortal clinical and sample metadata</Name>
+            <LastUpdate>2026-04-18</LastUpdate>
+            <Modality>TABULAR</Modality>
+            <Format>cBioPortal clinical data model (exported via portal/API)</Format>
+            <Size>78</Size>
+            <ParentID>0</ParentID>
+            <Purpose>Describe patients and samples (clinical attributes, survival where available) for study ccrcc_irc_2014.</Purpose>
+            <Link>https://www.cbioportal.org/study/summary?id=ccrcc_irc_2014</Link>
+            <Covmat>Not computed in this MAIDS repository.</Covmat>
+            <Modsys>Not bundled in this MAIDS repository.</Modsys>
+            <Features>
+                <Feature_1>
+                    <ID>1</ID>
+                    <Introduction>2026-04-18</Introduction>
+                    <Name>PATIENT_ID</Name>
+                    <Values>Study-specific pseudonymous identifiers (strings)</Values>
+                    <Unit></Unit>
+                    <Definition>Patient identifier linking samples from the same individual in cBioPortal.</Definition>
+                    <Purpose>Primary key for patient-level joins across tables.</Purpose>
+                    <Encoding></Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER>Not expected for enrolled patients</Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>N/A</Meaning_Zero>
+                    <Meaning_BlankVoid>Missing indicates absent linkage in export</Meaning_BlankVoid>
+                    <Sparsity></Sparsity>
+                    <Mean></Mean>
+                    <Std></Std>
+                    <Modality></Modality>
+                    <Median></Median>
+                    <IQR></IQR>
+                    <ParentIDs></ParentIDs>
+                </Feature_1>
+                <Feature_2>
+                    <ID>2</ID>
+                    <Introduction>2026-04-18</Introduction>
+                    <Name>SAMPLE_ID</Name>
+                    <Values>Study-specific sample identifiers (strings)</Values>
+                    <Unit></Unit>
+                    <Definition>Identifier for a biospecimen / sequencing library row in cBioPortal.</Definition>
+                    <Purpose>Join clinical rows to mutation and copy-number data.</Purpose>
+                    <Encoding></Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER></Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>N/A</Meaning_Zero>
+                    <Meaning_BlankVoid></Meaning_BlankVoid>
+                    <Sparsity></Sparsity>
+                    <Mean></Mean>
+                    <Std></Std>
+                    <Modality></Modality>
+                    <Median></Median>
+                    <IQR></IQR>
+                    <ParentIDs></ParentIDs>
+                </Feature_2>
+            </Features>
+        </Subset_1>
+        <Subset_2>
+            <ID>2</ID>
+            <Name>Somatic mutation calls (cBioPortal)</Name>
+            <LastUpdate>2026-04-18</LastUpdate>
+            <Modality>TABULAR</Modality>
+            <Format>MAF-style mutation table as provided by cBioPortal export</Format>
+            <Size>Variable (function of mutations per sample)</Size>
+            <ParentID>1</ParentID>
+            <Purpose>Capture single-nucleotide variants and small indels used in heterogeneity and phylogeny analyses.</Purpose>
+            <Link>https://www.cbioportal.org/study/summary?id=ccrcc_irc_2014</Link>
+            <Covmat>Not provided.</Covmat>
+            <Modsys>Not provided.</Modsys>
+            <Features>
+                <Feature_1>
+                    <ID>1</ID>
+                    <Introduction>2026-04-18</Introduction>
+                    <Name>Hugo_Symbol</Name>
+                    <Values>Gene symbols (strings)</Values>
+                    <Unit></Unit>
+                    <Definition>Gene affected by the variant in the MAF row.</Definition>
+                    <Purpose>Interpret functional impact in pathway analyses.</Purpose>
+                    <Encoding></Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER></Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>N/A</Meaning_Zero>
+                    <Meaning_BlankVoid></Meaning_BlankVoid>
+                    <Sparsity></Sparsity>
+                    <Mean></Mean>
+                    <Std></Std>
+                    <Modality></Modality>
+                    <Median></Median>
+                    <IQR></IQR>
+                    <ParentIDs></ParentIDs>
+                </Feature_1>
+                <Feature_2>
+                    <ID>2</ID>
+                    <Introduction>2026-04-18</Introduction>
+                    <Name>Variant_Classification</Name>
+                    <Values>Caller-specific consequence categories</Values>
+                    <Unit></Unit>
+                    <Definition>Functional annotation bucket for the variant (e.g., Missense_Mutation).</Definition>
+                    <Purpose>Filter pathogenic or coding events.</Purpose>
+                    <Encoding>Enumerated strings per MAF specification</Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER></Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>N/A</Meaning_Zero>
+                    <Meaning_BlankVoid></Meaning_BlankVoid>
+                    <Sparsity></Sparsity>
+                    <Mean></Mean>
+                    <Std></Std>
+                    <Modality></Modality>
+                    <Median></Median>
+                    <IQR></IQR>
+                    <ParentIDs></ParentIDs>
+                </Feature_2>
+            </Features>
+        </Subset_2>
+    </Subset_Feature_Dataset>
+</root>
