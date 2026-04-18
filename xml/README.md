@@ -7,7 +7,7 @@
 
 All MAIDS descriptions should have a `target` directory located in `./xml/` that describes the dataset as fully as possible. To create the `target` directory, simply copy the `empty` directory, rename it, and begin filling out the XML files. We are working on less error prone methods to do this initial task.
 
-For **ccrcc_irc_2014**, `target/feature_description.cbioportal.xml` holds an extended, cBioPortal-oriented feature list; **`target/feature_description.xml`** remains in the **legacy template shape** required by `code/build_site/xml2html.py`.
+For **ccrcc_irc_2014**, edit **`target/feature_description.cbioportal.xml`**, then run **`python3 code/transform_cbioportal_feature_xml.py`** to regenerate **`target/feature_description.xml`** (legacy MAIDS shape for `code/build_site/xml2html.py`).
 
 You can use this namespacing feature to create descriptive views/facets on the underlying dataset to highlight particular qualities, generate documents, and share them. However, the main and most complete description should be specified in `target`.
 

@@ -5,8 +5,9 @@
     GET /api/studies/ccrcc_irc_2014/patients  -> 10 patients
     GET /api/studies/ccrcc_irc_2014/samples  -> 79 samples
     Sample lists: "All samples" 79, "Samples with mutation data" 78 -> 78/79 ≈ 98.7% with mutation data
-  This file is NOT consumed by code/build_site/xml2html.py (that tool expects feature_description.xml
-  in the legacy MAIDS Template shape). Use feature_description.xml to regenerate docs/index.html.
+  Source of truth for cohort/features. Generate the legacy file for the static site with:
+    python3 code/transform_cbioportal_feature_xml.py
+  then: python3 code/build_site/xml2html.py -u target
 -->
 <feature_description xmlns="http://maids.persimune.dk/schema">
 

@@ -13,7 +13,8 @@ Upstream publication: Gerlinger et al., *Nature Genetics* 2014, PMID [24487277](
 | Path | Purpose |
 |------|---------|
 | `xml/target/` | Filled MAIDS XML (questionnaire, about, features, keywords, provenance) for this study |
-| `xml/target/feature_description.cbioportal.xml` | Rich cohort/feature snapshot (cBioPortal Summary–style); not used by `xml2html.py` — keep `feature_description.xml` for the static site |
+| `xml/target/feature_description.cbioportal.xml` | **Source:** rich cohort/feature snapshot (cBioPortal Summary–style) |
+| `code/transform_cbioportal_feature_xml.py` | **Transform:** generates legacy `feature_description.xml` for `xml2html.py` |
 | `docs/index.html` | Generated single-page MAIDS site (run build below) |
 | `code/fill_ccrcc_questionnaire.py` | Helper used to populate questionnaire answers (optional for updates) |
 
@@ -23,6 +24,7 @@ From the repository root (Python 3 + `beautifulsoup4`):
 
 ```bash
 pip install beautifulsoup4
+python3 code/transform_cbioportal_feature_xml.py
 python3 code/build_site/xml2html.py -u target
 ```
 
