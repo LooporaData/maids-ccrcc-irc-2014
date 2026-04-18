@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+    <title>Medical AI Datasheet (MAIDS)</title>
+
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="./css/style.css" rel="stylesheet" />
+    <link href="./css/help.css" rel="stylesheet" />
+    <link href="./css/lightbox.css" rel="stylesheet" />
+    <link href="./css/slick.css" rel="stylesheet" />
+    <link href="./css/dt.css" rel="stylesheet" />
+
+    <script src="./js/social.js" />
+    <script src="./js/lightbox-plus-jquery.js" />
+    <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js" />
+    <script src="./js/hbhelpers.js" />
+    <script src="./js/hbmaids.js" />
+    <script src="./js/slick.js" />
+    <script src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.min.js" />
+    <script src="./js/dt.js" />
+
+</head>
+
+<body>
+    <div id="emptyHandle"></div>
+
+    <script type="text/javascript">
+        var template = Handlebars.templates['{PUT_TEMPLATE_HERE}']
+
+        {PUT_HANDLE_HERE}
+
+        document.getElementById("emptyHandle").innerHTML += filledHandle;
+    </script>
+
+    <script src="./js/collapse.js"></script>
+
+</body>
+
+</html>

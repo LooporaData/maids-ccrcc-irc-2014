@@ -1,0 +1,214 @@
+<root name="FEATURE">
+    <!-- Do not change Subset_Questions as these are defined by the MAIDS specification -->
+    <Subset_Questions>
+        <ID>What is the ID of the Subset?</ID>
+        <Name>What is the name of the subset?</Name>
+        <LastUpdate>When was the subset last updated?</LastUpdate>
+        <Modality>What is the modality of the subset? (The type of data)</Modality>
+        <Format>What is the format or the schema of the subset?</Format>
+        <Size>What is the size of the subset? (Number of rows if it's a table or files if it's a directory)</Size>
+        <Parent>What is the ID of the parent of the subset? (Use 0 if none)</Parent>
+        <Purpose>What is the purpose of the subset?</Purpose>
+        <Link>What is the link (URL) to further description of the subset?</Link>
+        <Covmat>Have you calculated a covariance matrix (or similar) and made it available in this dataset? Where?</Covmat>
+        <Modsys>Have you modeled all (or a few) features and made the models accessible in this dataset? Where?</Modsys>
+    </Subset_Questions>
+    <!-- Do not change Feature_Questions as these are defined by the MAIDS specification -->
+    <Feature_Questions>
+        <ID>What is the ID of the feature?</ID>
+        <Subset>What is the ID of the reference subset of the feature?</Subset>
+        <Introduction>What is the introduction date of the feature?</Introduction>
+        <Name>What is the name of the feature?</Name>
+        <Values>What are the values that the feature might take?</Values>
+        <Meaning_NA_NULL_NONE_OTHER>What special meaning does NA, NULL, NONE, or any other placeholder have with respect to this feature?</Meaning_NA_NULL_NONE_OTHER>
+        <Meaning_Zero>What is the meaning of the feature if it is zero?</Meaning_Zero>
+        <Meaning_BlankVoid>What does it mean if no value is to be found?</Meaning_BlankVoid>
+        <Sparsity>What level of non-zero sparsity is there?</Sparsity>
+        <Mean>What is the mean if the feature is nummeric?</Mean>
+        <Std>What is the standard deviation if the feature is numeric?</Std>
+        <Modality>How many modes does the feature have?</Modality>
+        <Median>What is the median value?</Median>
+        <IQR>What is the inter quartile range?</IQR>
+        <ParentIDs>What is the ID of the parent feature (If derived from other features)</ParentIDs>
+        <Unit>What unit is this feature in? </Unit>
+        <Definition>Define the feature.</Definition>
+        <Purpose>Why does the feature exist or is it superfluous?</Purpose>
+        <Encoding>State whether the feature is encoded and what the mapping is.</Encoding>
+    </Feature_Questions>
+    <!-- Edit the Subset_Feature_Dataset below to describe your dataset. -->
+    <!-- The 6 subsets below are examples, replace them with your own. -->
+    <!-- FIND TEMPLATES AT THE END OF FILE! -->
+    <Subset_Feature_Dataset>
+        <Subset_1>
+            <ID>1</ID>
+            <Name>Example subset of tabular data</Name>
+            <LastUpdate>2021/03/01</LastUpdate>
+            <Modality>TABULAR</Modality>
+            <Format>CSV</Format>
+            <Size>0</Size>
+            <ParentID></ParentID>
+            <Purpose>To provide an example specification for a tabular CSV file.</Purpose>
+            <Link></Link>
+            <Covmat>No covariance matrix or any other similar data provided.</Covmat>
+            <Modsys>No models, model systems, or any other statistical description provided.</Modsys>
+            <Features>
+                <Feature_1>
+                    <ID>1</ID>
+                    <Introduction>2021/03/01</Introduction>
+                    <Name>PID</Name>
+                    <Values>1..inf; int</Values>
+                    <Unit></Unit>
+                    <Definition>Pseudononymized patient identifier.</Definition>
+                    <Purpose>Act as the primary identifier for joining subsets.</Purpose>
+                    <Encoding></Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER>Not possible</Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>Not possible</Meaning_Zero>
+                    <Meaning_BlankVoid>Not possible</Meaning_BlankVoid>
+                    <Sparsity></Sparsity>
+                    <Mean></Mean>
+                    <Std></Std>
+                    <Modality></Modality>
+                    <Median></Median>
+                    <IQR></IQR>
+                    <ParentIDs></ParentIDs>
+                </Feature_1>
+            </Features>
+        </Subset_1>
+        <Subset_2>
+            <ID>2</ID>
+            <Name>Example of unstructured data in files</Name>
+            <LastUpdate>2021/03/01</LastUpdate>
+            <Modality>FILES</Modality>
+            <Format>something</Format>
+            <Size>0</Size>
+            <ParentID></ParentID>
+            <Purpose>To provide an example specification for a folder containing many unstructured data files. Since there is no structure, no features are listed below. If there is a manifest, describe it within another subset and reference this subset as its parent.</Purpose>
+            <Link></Link>
+            <Covmat>No covariance matrix or any other similar data provided.</Covmat>
+            <Modsys>No models, model systems, or any other statistical description provided.</Modsys>
+            <Features></Features>
+        </Subset_2>
+        <Subset_3>
+            <ID>3</ID>
+            <Name>A manifest of data files and their meta-data</Name>
+            <LastUpdate>2021/03/01</LastUpdate>
+            <Modality>TABULAR</Modality>
+            <Format>XML</Format>
+            <Size>0</Size>
+            <ParentID>2</ParentID>
+            <Purpose>To provide an example of how meta-data on a folder of files could be specified.</Purpose>
+            <Link></Link>
+            <Covmat>Irrelevant</Covmat>
+            <Modsys>Irrelevant</Modsys>
+            <Features>
+                <Feature_1>
+                    <ID>1</ID>
+                    <Introduction>2021/03/01</Introduction>
+                    <Name>PID</Name>
+                    <Values>1..inf; int</Values>
+                    <Unit></Unit>
+                    <Definition>Pseudononymized patient identifier.</Definition>
+                    <Purpose>Act as the primary identifier for joining subsets.</Purpose>
+                    <Encoding></Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER>Not possible</Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>Not possible</Meaning_Zero>
+                    <Meaning_BlankVoid>Not possible</Meaning_BlankVoid>
+                    <Sparsity></Sparsity>
+                    <Mean></Mean>
+                    <Std></Std>
+                    <Modality></Modality>
+                    <Median></Median>
+                    <IQR></IQR>
+                    <ParentIDs></ParentIDs>
+                </Feature_1>
+                <Feature_2>
+                    <ID>2</ID>
+                    <Introduction>2021/03/01</Introduction>
+                    <Name>Filename</Name>
+                    <Values>a-zA-Z; str</Values>
+                    <Unit></Unit>
+                    <Definition>The filename</Definition>
+                    <Purpose>Provide name of file</Purpose>
+                    <Encoding>NA</Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER>NA</Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>NA</Meaning_Zero>
+                    <Meaning_BlankVoid>NA</Meaning_BlankVoid>
+                    <Sparsity>NA</Sparsity>
+                    <Mean>NA</Mean>
+                    <Std>NA</Std>
+                    <Modality>NA</Modality>
+                    <Median>NA</Median>
+                    <IQR>NA</IQR>
+                    <ParentIDs>NA</ParentIDs>
+                </Feature_2>
+                <Feature_3>
+                    <ID>3</ID>
+                    <Introduction>2021/03/01</Introduction>
+                    <Name>Some information</Name>
+                    <Values>1..inf; str</Values>
+                    <Unit></Unit>
+                    <Definition>Some extra information unique to each file</Definition>
+                    <Purpose>Why this information exists</Purpose>
+                    <Encoding>NA</Encoding>
+                    <Meaning_NA_NULL_NONE_OTHER>NA</Meaning_NA_NULL_NONE_OTHER>
+                    <Meaning_Zero>NA</Meaning_Zero>
+                    <Meaning_BlankVoid>NA</Meaning_BlankVoid>
+                    <Sparsity>NA</Sparsity>
+                    <Mean>NA</Mean>
+                    <Std>NA</Std>
+                    <Modality>NA</Modality>
+                    <Median>NA</Median>
+                    <IQR>NA</IQR>
+                    <ParentIDs>NA</ParentIDs>
+                </Feature_3>
+            </Features>
+        </Subset_3>
+    </Subset_Feature_Dataset>
+</root>
+
+<!-- |||||||||||||||||||||||||||||||| END ||||||||||||||||||||||||||||||||| -->
+
+<!-- 
+# TEMPLATES : Copy and paste to build above
+# SUBSET TEMPLATE, the feature template follows
+# Enumerate subsets by replacing X so that they have unique names
+<Subset_X>
+    <ID>AN_INTEGER</ID>
+    <Name>A_DESCRIPTIVE_NAME_ONE_WORD_IS_BEST</Name>
+    <LastUpdate>YYYYMMDD</LastUpdate>
+    <Modality>TABULAR_OR_FILES</Modality>
+    <Format>FILE_FORMAT</Format>
+    <Size>NUMBER_OF_INSTANCES_OR_ROWS</Size>
+    <ParentID>INTEGER_ID_OF_SUBSET_USED_TO_DERIVE_THIS_SUBSET</ParentID>
+    <Purpose>THE_REASON_THIS_SUBSET_EXISTS</Purpose>
+    <Link>ANY_WEB_LINK_EMPTY_IF_NOT</Link>
+    <Covmat>ANY_COVMAT_EMPTY_IF_NOT</Covmat>
+    <Modsys>ANY_MODSYS_EMPTY_IF_NOT</Modsys>
+    <Features>
+        ... Features go here ...
+    </Features>
+</Subset_X>
+
+# FEATURE TEMPLATE, the subset template is above
+# Enumerate features by replacing X so that they have unique names
+<Feature_X>
+    <ID>AN_INTEGER</ID>
+    <Date>FEATURE_PUT_INTO_SUBSET_ON_YYYYMMDD</Date>
+    <Name>A_DESCRIPTIVE_NAME_ONE_WORD_IS_BEST</Name>
+    <Values>WHAT_VALUES_DOES_THIS_FEATURE_HAVE</Values>
+    <Unit>UNITS_OF_FEATURE</Unit>
+    <Definition>DEFINITION</Definition>
+    <Purpose>PURPOSE</Purpose>
+    <Encoding>ACTUAL_MEANING_OF_VALUES_IF_ENCODED</Encoding>
+    <Meaning_NA_NULL_NONE_OTHER>MEANING_OF_NA_NULL_NONE</Meaning_NA_NULL_NONE_OTHER>
+    <Meaning_Zero>MEANING_OF_ZERO</Meaning_Zero>
+    <Meaning_BlankVoid>MEANING_OF_BLANK</Meaning_BlankVoid>
+    <Sparsity>MEASURE_OF_SPARSITY</Sparsity>
+    <Mean>MEASURE_OF_CENTRALITY</Mean>
+    <Std>MEASURE_OF_DEVIATION_FROM_CENTRALITY</Std>
+    <Modality>NUMBER_OF_MODES</Modality>
+    <Median>MEASURE_OF_CENTRALITY</Median>
+    <IQR>INTERQUARTILE_RANGE</IQR>
+    <ParentIDs>INTEGER_IDS_OF_FEATURES_IN_SAME_SUBSET</ParentIDs>
+</Feature_X>
+-->

@@ -1,0 +1,309 @@
+<div class="container-fluid main-container">
+
+    <!-- HEADER HEADER HEADER -->
+    <div class="paraHead">
+      <div class="paraHeadLogo">
+        <img src="./images/maids@3x.png"/>
+      </div>
+    </div>
+
+    <!-- SUBTITLE SUBTITLE SUBTITLE -->
+    <div id="header">
+      <center>
+        <h1 class="title toc-ignore">
+          <div class="mytitle">
+            {{title}}
+          </div>
+        </h1>
+        <h4>
+            <p class="mysubtitle">
+              by: 
+              {{#each authors}}
+              {{#if @last}}
+              {{author.firstnames}} {{author.lastname}}
+              {{else}}
+              {{author.firstnames}} {{author.lastname}},
+              {{/if}}
+              {{/each}}
+            </p>
+        </h4>
+        <p class="mysubtitle">
+          <!-- <b>Provenance: </b> -->
+          (<a class="tooltip"><b>?</b>
+            <span class="tooltiptext wide slate">This is the breadcrumb for this document's provenance, i.e. the history of how this document was made. MAIDS Documents are derived from a template that implements the specification detailing the rules and best practices to create MAIDS Documents. All three of these entities (Document, Template, and Specification) can change over time. It is therefore necessary to track which version of each entity a MAIDS Document is based on. This ensures that the value of the description found in each MAIDS document can be preserved over the long term and allows their reuse.</span>
+          </a>)
+          <a class="tooltip" href="https://github.com/PERSIMUNE-Health-Informatics/MAIDS-Specification">
+            {{provenance.specification.commit}}
+            <span class="tooltiptext wide slate"><b>Provenance (MAIDS Specification): </b>The partial git commit hash for the MAIDS Specification used in the template's (`{{provenance.template.commit}}`) design.</span>
+          </a> &rarr;
+          <a class="tooltip" href="https://github.com/PERSIMUNE-Health-Informatics/MAIDS">
+            {{provenance.template.commit}}
+            <span class="tooltiptext wide slate"><b>Provenance (MAIDS Template): </b>The partial git commit hash for the MAIDS Template used to initialise this dataset. Derived from MAIDS specification `{{provenance.specification.commit}}`.</span>
+          </a> &rarr;
+          <a class="tooltip">
+            v{{version.scores}}.{{version.description}}.{{version.questionnaire}}.{{version.subsets}}.{{version.synthetic}}
+            <span class="tooltiptext wide slate"><b>Provenance (MAIDS Document): </b>The internal version string for <b>this</b> Medical AI Datasheet derived from template `{{provenance.template.commit}}`. The compiled version string is read as, "[scores].[description].[questionnaire].[subsets].[statistical]". Each version number begins at 1 when a dataset is first described. Version numbers are incremented for each change (i.e. commit to the repository) that alters the respective section. Git commits in the repository should be tagged with this same compiled version string.</span>
+          </a>
+        </p>
+      </center>
+      <p><br></p>
+      <div class="score_container">
+        <center>
+          <table>
+            <tr>
+              <td><img class="score_background" src="./images/icons/score_docu.png" /><div class="score_value mytitle">{{scores.document.score}}</div><div class="score_title mytitle">Document score (<a class="tooltip">?<span class="tooltiptext narrow cyan">A score ranging between 1 and 3, with 3 being good enough to reproduce the dataset without seeing the original.</span></a>)</div></td>
+              <td><img class="score_background" src="./images/icons/score_bias.png" /><div class="score_value mytitle">{{scores.fairness.score}}</div><div class="score_title mytitle">Fairness score (<a class="tooltip">?<span class="tooltiptext narrow gold">An independant score rating the fairness of the data collected with respect to the community or task it was collected for.</span></a>)</div></td>
+              <td><img class="score_background" src="./images/icons/score_magn.png" /><div class="score_value mytitle">X<sup>{{scores.magnitude.score}}</sup></div><div class="score_title mytitle">Magnitude score (<a class="tooltip">?<span class="tooltiptext narrow avo">The number of instances collected in orders of magnitude, i.e. X<sup>3</sup> indicates a collection of between 1000 and 9999 instances.</span></a>)</div></td>
+              <td><img class="score_background" src="./images/icons/score_synth.png" /><div class="score_value mytitle">{{scores.synthetic.score}}</div><div class="score_title mytitle">Synthetic score (<a class="tooltip">?<span class="tooltiptext narrow lilac">A score ranging between <em>E</em> and <em>A</em>, with <em>A</em> indicating that the included synthetic data is good enough to draw true conclusions on. </span></a>)</div></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+      <center>
+        <br />
+        <a href="./maids.pdf"><img src="./images/icons/pdf_64.png" /></a> 
+        <a href="{{repository}}"><img src="./images/icons/repo_64.png" /></a> 
+        <a href='' onclick="Social.facebook('{{title}}','./images/thematic.png','{{briefmotivation.main}}')"><img src="./images/icons/facebook_64.png" /></a>
+        <a href='' onclick="Social.twitter('{{title}}')"><img src="./images/icons/twitter_64.png" /></a>
+        <a href='' onclick="Social.linkedin('{{title}}')"><img src="./images/icons/linkedin_64.png" /></a>
+        <p class="mysubtitle">Download the report, access the repository, share on social media!</p>
+        <p class="mysubtitle">This site is only a summary: Release dates, version control, discussions, and much more are available through the repository.</p>
+      </center>
+      <p><br></p>
+    </div>
+
+    <!-- MAIN MAIN MAIN -->
+    <div class="mycontent">
+      <div id="motivation" class="section level1">
+        <h1>Motivation</h1>
+        <hr />
+        <table style="width:100%;">
+          <tr style="vertical-align: top; padding: 0px;">
+            <td style="width: {{#if thematic.imagewidth}}{{thematic.imagewidth}}{{else}}75{{/if}}px">
+              <img src="./images/figures/{{thematic.filename}}" style="width: 100%" alt="" /> <!-- Best to use a squared PNG. Recommended size of 500 x 500 px. If required, cite the image within the 'alt' text. -->
+            </td>
+            <td style="padding-left: {{#if thematic.lefttextpadding}}{{thematic.lefttextpadding}}{{else}}15{{/if}}px;">
+              <p>
+                {{abstract}}
+              </p>
+              {{#if usecases}}
+              <span class="question_titles">Use cases:</span>
+              <ol>
+                {{#each usecases}}
+                <li>{{usecase}}</li>
+                {{/each}}
+              </ol>
+              {{/if}}
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="keywords-and-definitions" class="section level1">
+        <hr />
+        <button class="collapsible">Keywords and definitions</button>
+        <div class="content">
+          {{#unless definitions}}
+          <p>No keywords or definitions defined for this dataset.</p>
+          {{/unless}}
+          {{#if definitions}}
+          <table style="width:100%;">
+            {{#each definitions}}
+            <tr><td style="width:33%">{{definition.keyword}}</td><td>{{definition.definition}}{{addLinkDefinition}}</td></tr>
+            {{/each}}
+          </table>
+          {{/if}}
+        </div>
+      </div>
+
+      <div id="research-questions" class="section level1">
+        <h1>Research questions</h1>
+        <hr />
+        <blockquote>
+          <p>The following questions are given by the authors of this dataset as a guide, i.e. these questions reflect 'why' the dataset was created in the first place. Feel free to address these questions directly or to formulate your own hypotheses.</p>
+        </blockquote>
+        <h4 class="question_titles">Main research questions</h4>
+          <p>
+            {{#if research.main}}
+            {{{research.main}}}
+            {{/if}}
+            {{#unless research.main}}
+            The author has not provided a main research question. If there are secondary question(s) this usually indicates that this dataset has not been collected for any specific purpose.
+            {{/unless}}
+          </p>
+        <h4 class="question_titles">Secondary research questions</h4>
+          <p>
+            {{#if research.secondary}}
+            {{{research.secondary}}}
+            {{/if}}
+            {{#unless research.secondary}}
+            The author has not provided a secondary research question. If there is also no main research question(s) this usually indicates that this dataset is still being defined.
+            {{/unless}}
+          </p>
+      </div>
+
+      <div id="figures" class="section level1">
+        <h1>Figures</h1>
+        <hr />
+        <blockquote>
+          Click (or tap) a figure to enlarge where you will also find a descriptive legend below it's title.
+          Click and drag (or swipe) to scroll through the gallery.
+        </blockquote>
+        <p>
+          {{#if figures}}
+          <div class="slider">
+            {{#each figures}}
+              <center><a href="./images/figures/{{figure.filename}}" data-lightbox="slickfigures" data-title="<em>{{figure.title}}</em><br />(Scroll down if required) {{figure.legend}}" data-alt="{{figure.title}}"><img src="./images/figures/{{figure.filename}}" />{{figure.title}}</a></center>
+            {{/each}}
+          </div>
+          {{/if}}
+          {{#unless figures}}
+          This dataset does not have any figures associated to it.
+          {{/unless}}
+        </p>
+      </div>
+
+      <div id="purpose-ethics" class="section level1">
+        <h1>Questionnaire</h1>
+        <hr />
+        <blockquote>
+          The following 7 categories list answers from the authors of this dataset to 59 standardised questions. Click each category to find out more. Unanswered questions are marked.
+        </blockquote>
+        <button class="collapsible" style="background-color: rgb(104, 102, 133);">Concept of MAIDS as an extension of "Datasheets for datasets"</button>
+        <div class="content">
+          <p>The concept of a Medical AI Data Sheet (MAIDS) is inspired by the work of <a ref="https://arxiv.org/abs/1803.09010v3">Gebru et al., 19 Mar 2020 [arXiv:1803.0901v7]</a>, which collects the thoughts and ideas across the data community on how best to communicate datasets to maximise their value and inspire future work and collaboration. MAIDS is intended to encourage open and transparent communication of data assets while maintaining high standards of data security when required by regulatory, ethical or other legal concerns.</p>
+          <p>A dataset's value is increased by thoughtful description of the motivation behind creating the dataset in the first place, the composition of the dataset and how it was collected, whether any preprocessing / cleaning / labeling was done, intended uses of the data, and how the dataset is intended to be distributed and maintained. Transparency on these components neither harms the impact data owners might otherwise achieve by hiding such information nor does it harm anyone described by the underlying data itself. Thus, any such descriptions may be freely shared with interested data consumers (a.k.a. the public) and by this dissemination, safely increase the scientific value of the dataset.</p>
+          <p>On the other hand, a dataset's value is decreased when avoiding proper description of these topics as it can lead to bias and discrimination (intended or not), improper use/research, technical misunderstanding, forgotten provenance, unsafe exposure, etc.</p>
+          <p>MAIDS is a principled extension of these ideas targeted at clinical research and designed to allow the communication and considered debate of datasets without exposing sensitive data. The goal is to standardize this process as much as possible to avoid uninformed decisions and approach data analysis sooner, and with greater confidence.</p>
+        </div>
+        {{#each categories}}
+        <button class="collapsible">Category {{category.id}} - {{category.name}} ({{category.code}})</button>
+        <div class="content">
+          <p>
+            {{category.description}}
+          </p>
+          {{#each category.entries}}
+          <button class="collapsible collapsiblechild">{{../category.code}}{{entry.id}}: {{entry.question}} {{ifUnanswered}}</button>
+          <div class="content">
+            <center>
+              <table style="width: 90%">
+                <tr><td>{{entry.answer}}</td></tr>
+                <tr><td class="answeredonby">By: {{entry.by}}</td><td class="answeredonby">On: {{entry.on}}</td></tr>
+              </table>
+            </center>
+          </div>
+          {{/each}}
+          <p><br /><br /><br /></p>
+        </div>
+        {{/each}}
+      </div>
+      
+      <div id="subsets-and-features" class="section level1">
+        <h1>Subsets and features</h1>
+        <hr />
+        {{#unless subsets}}
+        <blockquote>
+          There appears to be no subsets defined. This MAIDS document is likely still under construction.
+        </blockquote>
+        {{/unless}}
+        {{#if subsets}}
+        <blockquote>
+          The following subsets and their features are available in this dataset. The cartoon below demonstrates how subsets relate to one another. Click each subset to find out more about their purpose as well as detailed statistics on the features they describe.
+        </blockquote>
+        <center>
+          <a href="./images/figures/{{subsetAssociations.filename}}" data-lightbox="datasetassociations" data-title="<em>Subset associations, depicting how subsets relate to one another.</em><br />(Scroll down if required) {{subsetAssociations.legend}}" data-alt="Subset associations, depicting how subsets relate to one another."><img src="./images/figures/{{subsetAssociations.filename}}" /></a>
+        </center>
+        {{#each subsets}}
+        <button class="collapsible">Subset {{subset.id}}.  {{subset.name}}</button>
+        <div class="content">
+          <center>
+            <table class="answeredonby" style="width: 90%">
+              <tr><td><b>Last updated on</b>: {{subset.updated}}</td><td><b>Modality</b>: {{subset.modality}}</td><td><b>File</b> format: {{subset.format}}</td>
+              <tr><td><b>Size</b>: {{subset.size}}</td><td><b>Derived from subset</b>: {{subset.parentid}}</td><td>{{addLinkSubset}}</td></tr>
+              <tr><td colspan="3"><b>Covariance</b>: {{subset.covmat}}</td></tr>
+              <tr><td colspan="3"><b>Models</b>: {{subset.modsys}}</td></tr>
+            </table>
+          </center>
+          <p><br /></p>
+          <blockquote>Purpose: {{subset.purpose}}</blockquote>
+          {{#if subset.features}}
+          <center>
+            <table id="dt{{subset.id}}" class="display featureTable" style="width:90%">
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Introduced</th>
+                  <th>Name</th>
+                  <th>Values</th>
+                  <th>Unit</th>
+                  <th>Definition</th>
+                  <th>Purpose</th>
+                  <th>Encoding</th>
+                  <th>Parent(s)</th>
+                  <th>Meaning Na/Null/None</th>
+                  <th>Meaning Zero</th>
+                  <th>Meaning Blank/Void</th>
+                  <th>Sparsity</th>
+                  <th>Mean</th>
+                  <th>Std</th>
+                  <th>Modality</th>
+                  <th>Median</th>
+                  <th>IQR</th>
+                </tr>
+              </thead>
+              <tbody>
+                {{#each subset.features}}
+                <tr>
+                  <td>{{feature.id}}</td>
+                  <td>{{feature.date}}</td>
+                  <td>{{feature.name}}</td>
+                  <td>{{feature.values}}</td>
+                  <td>{{feature.unit}}</td>
+                  <td>{{feature.definition}}</td>
+                  <td>{{feature.purpose}}</td>
+                  <td>{{feature.encoding}}</td>
+                  <td>{{feature.parents}}(s)</td>
+                  <td>{{feature.meaningNaNullNone}}</td>
+                  <td>{{feature.meaningZero}}</td>
+                  <td>{{feature.meaningBlankVoid}}</td>
+                  <td>{{feature.sparsity}}</td>
+                  <td>{{feature.mean}}</td>
+                  <td>{{feature.std}}</td>
+                  <td>{{feature.modality}}</td>
+                  <td>{{feature.median}}</td>
+                  <td>{{feature.iqr}}</td>
+                </tr>
+                {{/each}}
+              </tbody>
+            </table>
+          </center>
+          <p><br /></p>
+          {{/if}}
+        </div>
+        {{/each}}
+        {{/if}}
+      </div>
+      <p><br /><br /></p>
+    </div>
+
+    <!-- DOCUMENT SCORE again-->
+
+    <div id="header">
+      <p><br></p>
+      <div class="score_container">
+        <center>
+          <table>
+            <tr>
+              <td><img class="score_background" src="./images/icons/score_docu.png" /><div class="score_value mytitle">{{scores.document.score}}</div><div class="score_title mytitle">Document score (<a class="tooltip">?<span class="tooltiptext narrow cyan">A score ranging between 1 and 3, with 3 being good enough to reproduce the dataset without seeing the original.</span></a>)</div></td>
+              <td><img class="score_background" src="./images/icons/score_bias.png" /><div class="score_value mytitle">{{scores.fairness.score}}</div><div class="score_title mytitle">Fairness score (<a class="tooltip">?<span class="tooltiptext narrow gold">An independant score rating the fairness of the data collected with respect to the community or task it was collected for.</span></a>)</div></td>
+              <td><img class="score_background" src="./images/icons/score_magn.png" /><div class="score_value mytitle">X<sup>{{scores.magnitude.score}}</sup></div><div class="score_title mytitle">Magnitude score (<a class="tooltip">?<span class="tooltiptext narrow avo">The number of instances collected in orders of magnitude, i.e. X<sup>3</sup> indicates a collection of between 1000 and 9999 instances.</span></a>)</div></td>
+              <td><img class="score_background" src="./images/icons/score_synth.png" /><div class="score_value mytitle">{{scores.synthetic.score}}</div><div class="score_title mytitle">Synthetic score (<a class="tooltip">?<span class="tooltiptext narrow lilac">A score ranging between <em>E</em> and <em>A</em>, with <em>A</em> indicating that the included synthetic data is good enough to draw true conclusions on. </span></a>)</div></td>
+            </tr>
+          </table>
+        </center>
+      </div>
+    </div>
+
+    <!-- FOOTER FOOTER FOOTER -->
+    <div class="paraFoot"></div>
+</div>

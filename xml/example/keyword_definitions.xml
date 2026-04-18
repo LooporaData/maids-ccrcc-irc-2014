@@ -1,0 +1,21 @@
+<root name="DEFINITION">
+    <!-- Do not change Keyword_Questions as these are defined by the MAIDS specification -->
+    <Keyword_Questions>
+        <Keyword>What is a keyword or term used in MAIDS that you believe would be helpful to describe the keyword?</Keyword>
+        <Definition>What is the definition of the keyword?</Definition>
+        <Link>What is the link to online material further discussing of the keyword?</Link>
+    </Keyword_Questions>
+    <!-- Edit the Keywords_Dataset below to describe your dataset -->
+    <Keywords_Dataset>
+        <Keyword_1>
+            <Keyword>A keyword</Keyword>
+            <Definition>It means this.</Definition>
+            <Link>https://link.to.reference/material</Link>
+        </Keyword_1>
+        <Keyword_2>
+            <Keyword>Another keyword</Keyword>
+            <Definition>Another definition without an online reference.</Definition>
+            <Link></Link>
+        </Keyword_2>
+    </Keywords_Dataset>
+</root>

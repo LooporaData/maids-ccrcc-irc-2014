@@ -1,0 +1,211 @@
+<!-- Edit the answers below to describe your dataset -->
+<!-- Do not change questions as these are defined by the MAIDS specification -->
+<root name="ABOUT">
+    <title>
+        <question>What is the title of your dataset?</question>
+        <answer>A very interesting title indeed!</answer>>
+    </title>
+    <repository>
+        <question>What is the URL of the repository for this MAIDS description on Github?</question>
+        <answer>https://github.com/PERSIMUNE-Health-Informatics/MAIDS-Template</answer>
+    </repository>
+    <authors>
+        <question>Who are the dataset's authors?</question>
+        <answer>
+            <author_1>
+                <!-- Primary contact that must always be specified -->
+                <firstnames>John</firstnames>
+                <lastname>Doe</lastname>
+                <email>john.doe@somedomain.com</email>
+            </author_1>
+            <author_2>
+                <firstnames>Jane</firstnames>
+                <lastname>Doe</lastname>
+                <email>jane.doe@somedomain.com</email>
+            </author_2>
+        </answer>
+    </authors>
+    <scores>
+        <document>
+            <score>
+                <question>What is the document score, as defined by MAIDS?</question>
+                <answer>1</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>This is a basic description of the dataset and missing the necessary statistical description to generate a decent synthetic version.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer>person</answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer>John Doe</answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer>John Doe</answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer>john.doe@somedomain.com</answer>
+                </contactEmail>
+            </evaluator>
+        </document>
+        <fairness>
+            <score>
+                <question>What is the fairness score given, as defined by MAIDS?</question>
+                <answer>?</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>No committee has evaluated this dataset.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer />
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer />
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer />
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer />
+                </contactEmail>
+            </evaluator>
+        </fairness>
+        <magnitude>
+            <score>
+                <question>What is the magnitude score given, as defined by MAIDS?</question>
+                <answer>0</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>This example dataset contains no data.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer>person</answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer>John Doe</answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer>John Doe</answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer>john.doe@somedomain.com</answer>
+                </contactEmail>
+            </evaluator>
+        </magnitude>
+        <synthetic>
+            <score>
+                <question>What is the synthetic score given, as defined by MAIDS?</question>
+                <answer>E</answer>
+            </score>
+            <comment>
+                <question>Why was this score given? Provide a full justification.</question>
+                <answer>No synthetic data or scripts to generate such data are included.</answer>
+            </comment>
+            <evaluator>
+                <entityType>
+                    <question>What gave the score? [algorithm / group / committee / person]</question>
+                    <answer>person</answer>
+                </entityType>
+                <entityName>
+                    <question>Name of algorithm / group / committee / person who gave the score?</question>
+                    <answer>John Doe</answer>
+                </entityName>
+                <contactName>
+                    <question>Who should be contacted to query the score?</question>
+                    <answer>John Doe</answer>
+                </contactName>
+                <contactEmail>
+                    <question>What is the contact person's email address?</question>
+                    <answer>john.doe@somedomain.com</answer>
+                </contactEmail>
+            </evaluator>
+        </synthetic>
+    </scores>
+    <thematic>
+        <filename>thematic.png</filename>
+    </thematic>
+    <abstract>
+        <question>Please provide a brief abstract describing this dataset.</question>
+        <answer>Abstract: This is an example MAIDS document describing an empty dataset. It has been designed for publication within the MAIDS template on github.</answer>
+    </abstract>
+    <usecases>
+        <question>Please provide one or more short use cases to highlight what this dataset might be used for. These should summarise the main and secondary research questions into single sentence objectives. You may also use this section to expand on possible uses not discussed in the research questions. It has the following use cases:</question>
+        <answer>
+            <usecase_1>An example or a short use case statement.</usecase_1>
+            <usecase_2>Another example.</usecase_2>
+            <usecase_3>Include as many use cases as you would like.</usecase_3>
+            <usecase_4>A good practice is to itemize the uses identified by the main research questions.</usecase_4>
+        </answer>
+    </usecases>
+    <research>
+        <main>
+            <question>Please state, in detail, the main hypothesis for which this dataset was created.</question>
+            <answer>This is where you should describe the main research questions for which the dataset was created to answer. Please make it as long as it needs to be and refer to the figures. The use cases above should summarize these questions succinctly.</answer>
+        </main>
+        <secondary>
+            <question>Please state, in detail, any other hypotheses which this dataset would be able to address.</question>
+            <answer>This is where you should describe the research questions that could be answered by this dataset even if it wasn't created for this exact purpose. The use cases above should summarize these questions succinctly.</answer>
+        </secondary>
+    </research>
+    <figures>
+        <question>Please entitle and provide a legend for each figure found in "./images/figures/".</question>
+        <answer>
+            <!-- Template: <figure_1><filename /><title /><legend /></figure_1> -->
+            <figure_1>
+                <filename>example1.jpg</filename>
+                <title>Figure 1. First example</title>
+                <legend>Figure 1's legend.</legend>>
+            </figure_1>
+            <figure_2>
+                <filename>example2.jpg</filename>
+                <title>Figure 2. Second example</title>
+                <legend>Figure 2's legend.</legend>>
+            </figure_2>
+            <figure_3>
+                <filename>example3.jpg</filename>
+                <title>Figure 3. Third example</title>
+                <legend>Figure 3's legend.</legend>>
+            </figure_3>
+            <figure_4>
+                <filename>example4.jpg</filename>
+                <title>Figure 4. Fourth example</title>
+                <legend>Figure 4's legend.</legend>>
+            </figure_4>
+            <figure_5>
+                <filename>example5.jpg</filename>
+                <title>Figure 5. Fifth example</title>
+                <legend>Figure 5's legend.</legend>>
+            </figure_5>
+            <figure_6>
+                <filename>example6.jpg</filename>
+                <title>Figure 6. Sixth example</title>
+                <legend>Figure 6's legend.</legend>>
+            </figure_6>
+        </answer>
+    </figures>
+    <subsetAssociations>
+        <filename>datasetassociations.jpg</filename>
+        <legend>
+            <question>What is the legend for the figure describing how subsets are associated to one another?</question>
+            <answer>An example of how 3 different subsets are connected by a patient identifier. The aspect ratio is 5 to 3.5.</answer>
+        </legend>
+    </subsetAssociations>
+</root>
