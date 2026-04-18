@@ -13,6 +13,7 @@ Upstream publication: Gerlinger et al., *Nature Genetics* 2014, PMID [24487277](
 | Path | Purpose |
 |------|---------|
 | `xml/target/` | Filled MAIDS XML (questionnaire, about, features, keywords, provenance) for this study |
+| `xml/target/feature_description.cbioportal.xml` | Rich cohort/feature snapshot (cBioPortal Summary–style); not used by `xml2html.py` — keep `feature_description.xml` for the static site |
 | `docs/index.html` | Generated single-page MAIDS site (run build below) |
 | `code/fill_ccrcc_questionnaire.py` | Helper used to populate questionnaire answers (optional for updates) |
 

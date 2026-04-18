@@ -40,9 +40,9 @@
             <LastUpdate>2026-04-18</LastUpdate>
             <Modality>TABULAR</Modality>
             <Format>cBioPortal clinical data model (exported via portal/API)</Format>
-            <Size>78</Size>
+            <Size>79</Size>
             <ParentID>0</ParentID>
-            <Purpose>Describe patients and samples (clinical attributes, survival where available) for study ccrcc_irc_2014.</Purpose>
+            <Purpose>Describe patients and samples for study ccrcc_irc_2014: 10 patients, 79 samples in cBioPortal “All samples” list, 78 with mutation data (see also feature_description.cbioportal.xml).</Purpose>
             <Link>https://www.cbioportal.org/study/summary?id=ccrcc_irc_2014</Link>
             <Covmat>Not computed in this MAIDS repository.</Covmat>
             <Modsys>Not bundled in this MAIDS repository.</Modsys>
