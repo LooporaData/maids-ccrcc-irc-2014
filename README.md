@@ -11,3 +11,11 @@ This repository is intended to maintain the code and protocols for authoring new
 You can make use of this template either through the Github templating button at the top of this page or by cloning and changing the remote to your organisation or own account. Templating makes it quick and easy to get started but you will not be able to merge any updates using git. Cloning, on the other hand, will allow you to use git to update provided you know how. We plan to make updating easier in the future, but for now these are your only options. Please do not fork this repository unless you would actually like to contribute directly to this project.
 
 Please watch/star if you'd like to be notified of new developments.
+
+## GitHub Pages
+
+The MAIDS build outputs a static site under **`docs/`** (`index.html`, `css/`, `js/`, `images/`). Enable hosting: **Settings → Pages → Deploy from a branch → `main` → `/docs`**.
+
+This repo includes **`docs/.nojekyll`** so GitHub does not run Jekyll on that folder.
+
+After deployment, the site is **`https://looporadata.github.io/maids-ccrcc-irc-2014/`**. Regenerate `docs/` with `python3 code/build_site/xml2html.py -u target` (after filling `xml/target/`) or `-u example`, then commit and push.
